@@ -1,0 +1,215 @@
+.container {
+    margin: 0px;
+    grid-template-rows: 0.1fr 1frfr 2fr 1fr;
+    grid-template-columns: repeat(3px, 10fr);
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 
+    'header header header'
+    'section section section'
+    'main main main'
+    'footer footer footer';
+}
+@media (max-width:760px) {
+    .container {
+      grid-template-areas: 
+       'header'
+       'section'
+       'main'
+       'footer'
+      ;
+    } 
+}
+html, .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    'logo listbox listbox';
+}
+.logo {
+    grid-area: logo;
+}
+.listbox {
+    grid-area: listbox;
+    float: right;
+    padding: 20px;
+        }
+label { 
+        margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        line-height: 70px;
+        display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
+    }
+.listbox li a {
+    text-decoration: none;
+}
+#toggle {
+    display: none;
+}
+
+/*@Media is a query that ensure a specific size of screen is shown which is below 500px. Anything below 500px will display on mobile view and those above 500px would not show. */
+@media (max-width: 760px) {
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 26px;
+    }
+    .listbox {
+        display: none;
+        position: absolute;
+        right: 5px;
+        width: 150px;
+        z-index: 2;
+        background: black;
+    }
+    .listbox li a {
+        display: block;
+        border-bottom: 1px solid #0202db;
+       
+    }
+    #toggle:checked + .listbox {
+        display: block;
+    }
+}
+.header {
+    grid-area: header;
+    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
+}
+.header .listbox li a{
+font-size: 20px;
+color: firebrick;
+text-decoration: none;
+padding:10px;
+}
+.listbox li a:hover {
+    color: yellow;
+    border-radius: 50%;
+}
+.listbox li {
+    float: left;
+    list-style: none;
+    padding-right: 70px;
+}
+.listbox {
+    float: inline-end;
+}
+.section {
+    grid-area: section;
+    background: grey;
+    padding: 10px;
+    padding-left: 67px;
+}
+.box-con{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.section img {
+    border-radius: 5%;
+}
+.head {
+    grid-area: head;
+    text-align: center;
+}
+.port {
+    color: gainsboro;
+    font-size: 50px ;
+}
+#box {
+    box-shadow: 0 0 25px black;
+}
+.box-1 {
+    grid-area: box-1;
+    background: lightgray;
+    width: 330px;
+    text-align: center;
+    padding:4px;
+    border-radius: 5%;
+    height:450px;
+}
+.box-2 {
+    grid-area: box-2;
+    background: lightgray;
+    width: 330px;
+    border-radius: 5%;
+    padding:4px;
+    text-align: center;
+    height:450px;
+}
+.box-3 {
+    grid-area: box-3;
+    background: lightgray;
+    width: 330px;
+    padding:4px;
+    text-align: center;
+    height:450px;
+    border-radius: 5%;
+}
+.main {
+    grid-area: main;
+    background: black;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 25px;
+    padding: 7px;
+}
+ span {
+    font-size: 20px;
+    color: yellow;
+    padding: 6px;
+    text-decoration: none;
+}
+.footer {
+    grid-area:footer;
+    padding-left: 7px;
+    text-align: left;  
+background: rgb(61, 56, 56);
+color: wheat;
+}
+footer ul li {
+    list-style: none;
+    text-decoration: none;
+
+}
+img {
+    border: none;
+}
+#quick {
+    text-align: left;
+}
+.line {
+    background-color: yellow;
+    width: 100px;
+    height: 3px;
+    border-radius: 5px;
+    margin-left: 9px;
+    text-align: left;
+} 
+.listbox-2 li a {
+    text-decoration: none;
+    color: wheat;
+    line-height: 2rem;
+}
+.content {
+    line-height: 2rem;
+    text-align: left;
+}
+footer ul li {
+    list-style: none;
+    text-decoration: none;
+
+}
+.listbox-2 li a:hover {
+    color: yellowgreen;
+}

@@ -1,0 +1,176 @@
+.container {
+    margin: 0px;
+    grid-template-rows: 0fr 0fr 0fr;
+    grid-template-columns: repeat(3px, 10fr);
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 
+    'header header header'
+    'section section section'
+    'main main main'
+    'footer footer footer';
+}
+html, .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    'logo listbox listbox';
+   
+}
+.logo {
+    grid-area: logo;
+}
+.listbox {
+    grid-area: listbox;
+    padding: 12px;
+    float: right;
+        }
+.nav {
+        text-align: right;
+    }
+label { 
+        margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        line-height: 70px;
+        display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
+    }
+#toggle {
+    display: none;
+}
+
+/*@Media is a query that ensure a specific size of screen is shown which is below 500px. Anything below 500px will display on mobile view and those above 500px would not show. */
+@media (max-width: 760px) {
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 26px;
+    }
+    .listbox {
+        display: none;
+        position: absolute;
+        right: 5px;
+        width: 150px;
+        z-index: 2;
+        background: black;
+    }
+    .listbox li a {
+        display: block;
+        border-bottom: 1px solid #0202db;
+       
+    }
+    #toggle:checked + .listbox {
+        display: block;
+    }
+}
+.header {
+    grid-area: header;
+    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
+}
+.header .listbox li a{
+    font-size: 20px;
+    color: rgb(240, 0, 0);
+    text-decoration: none;
+    padding: 10px;
+    }
+    .listbox li {
+        padding-right: 70px;
+    }
+    .listbox li a:hover {
+        color: yellow;
+        border-radius: 50%;
+    }
+    .listbox li {
+        float: left;
+        list-style: none;
+        padding-right: 70px;
+    }
+.section {
+    text-align: center;
+    grid-area: section;
+    background: rgb(174, 138, 138);
+}
+.section .about h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.section .about p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+.why {
+    font-family: 'Courier New', Courier, monospace;
+    color: royalblue;
+    font-size: 60px;
+}
+.main {
+    color: rgb(165, 165, 165);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    grid-area: main;
+    background: rgb(72, 59, 59);
+}
+#heading {
+    font-size: 20px;
+    border: 1px grey solid;
+    color: yellowgreen;
+}
+.wrap {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: center;
+padding-bottom: 20px;
+padding-top: 20px;
+}
+#box {
+    border: 1px rgb(0, 0, 0) solid;
+padding: 7px;
+width: 300px;
+height: 300px;
+box-shadow: white 0 0 15px 15px;
+}
+.section #heading {
+    color:  whitesmoke;
+    font-size: 35px;
+}
+.boxhead {
+    color: white;
+    font-size: 30px;
+}
+    .footer {
+        grid-area:footer;
+        padding-left: 5px;
+        text-align: left;  
+    background: rgb(61, 56, 56);
+    color: wheat;
+    }
+    footer ul li {
+        list-style: none;
+        text-decoration: none;
+    }
+    .line {
+        background-color: yellow;
+        width: 100px;
+        height: 3px;
+        border-radius: 5px;
+        margin-left: 10px;
+    } 
+    .listbox-2 li a {
+        text-decoration: none;
+        color: wheat;
+        line-height: 2rem;
+    }
+    footer ul li {
+        list-style: none;
+        text-decoration: none;
+    }
+    .listbox-2 li a:hover {
+        color: yellowgreen;
+    }

@@ -1,0 +1,189 @@
+.container {
+    margin: 0px;
+    grid-template-columns: repeat(3px, 10fr);
+    padding: 3px;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    grid-gap: 5px;
+    grid-template-areas: 
+    'header header header'
+    'main main main'
+    'footer footer footer';
+}
+html, .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    'logo listbox listbox';
+   
+}
+.logo {
+    grid-area: logo;
+}
+.listbox {
+    grid-area: listbox;
+    padding: 20px;
+    float: right;
+        }
+.nav {
+        text-align: right;
+    }
+label { 
+        margin: 0 40px 20px 0; /* This mean margin top = 0, right = 40px, down = 0 and left = 0*/
+        
+        display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
+    }
+
+.listbox li a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+#toggle {
+    display: none;
+}
+/*@Media is a query that ensure a specific size of screen is shown which is below 500px. Anything below 500px will display on mobile view and those above 500px would not show. */
+@media (max-width: 760px) {
+    label {
+        display: block;
+        cursor: pointer;
+        font-size: 26px;
+    }
+    .listbox {
+        display: none;
+        position: absolute;
+        right: 5px;
+        width: 150px;
+        z-index: 2;
+        background: black;
+
+    }
+    .listbox li a {
+        display: block;
+        border-bottom: 1px solid #0202db;
+       
+    }
+    #toggle:checked + .listbox {
+        display: block;
+    }
+}
+.header {
+    grid-area: header;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
+}
+.header .listbox li a{
+font-size: 20px;
+color: red;
+text-decoration: none;
+}
+.listbox li a:hover {
+    color: yellow;
+    border-radius: 50%;
+}
+.listbox li {
+    float: left;
+    list-style: none;
+    padding-left: 70px;
+}
+.listbox {
+    float: inline-end;
+}
+.main {
+    grid-area: main;
+    background: linear-gradient(45deg, rgb(118, 74, 84),  rgb(91, 92, 62),  rgb(109, 81, 65),  rgb(92, 85, 51),  rgb(85, 64, 64));
+    color: antiquewhite;
+    text-align: center;
+    padding: 10px;
+}
+
+#boxcon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+#box {
+    margin: auto;
+}
+.head {
+    grid-area: head;
+}
+#box {
+    background: white;
+    height: 390px;
+    color: gray;
+    width: 300px;
+    padding-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 50px black;
+}
+.main img {
+    margin: auto;
+}
+.box-1{
+    margin-left: 100px;
+    grid-area: box-1;
+    display: grid;
+}
+.box-2{
+    display: grid;
+    grid-area: box-2;
+}
+.box-3{
+    display: grid;
+    grid-area: box-3;
+}
+.footer {
+    height: 360px;
+    grid-area:footer;
+    padding-left: 7px;
+    text-align: left;  
+    background: rgb(61, 56, 56);
+    color: wheat;
+}
+footer ul li {
+    list-style: none;
+    text-decoration: none;
+
+}
+img {
+    border: none;
+}
+#quick {
+    text-align: left;
+}
+.line {
+    background-color: yellow;
+    width: 100px;
+    margin-left: 10px;
+    height: 3px;
+    border-radius: 5px;
+    text-align: left;
+} 
+.listbox-2 li a {
+    text-decoration: none;
+    color: wheat;
+    line-height: 2rem;
+}
+.content {
+    line-height: 2rem;
+    text-align: left;
+}
+footer ul li {
+    list-style: none;
+    text-decoration: none;
+
+}
+.listbox-2 li a:hover {
+    color: yellowgreen;
+}
