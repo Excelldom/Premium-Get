@@ -83,23 +83,21 @@ label {
     background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
 }
 .header .listbox li a{
-font-size: 20px;
-color: firebrick;
-text-decoration: none;
-padding:10px;
-}
-.listbox li a:hover {
-    color: yellow;
-    border-radius: 50%;
-}
-.listbox li {
-    float: left;
-    list-style: none;
-    padding-right: 70px;
-}
-.listbox {
-    float: inline-end;
-}
+    font-size: 20px;
+    color: firebrick;
+    text-decoration: none;
+    padding: 10px ;
+
+    }
+    .listbox li a:hover {
+        color: yellow;
+        border-radius: 50%;
+    }
+    .listbox li {
+        float: left;
+        list-style: none;
+        padding: 15px;
+    }
 .section {
     grid-area: section;
     background: grey;

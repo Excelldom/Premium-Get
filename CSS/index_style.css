@@ -39,8 +39,10 @@ html, .container {
         text-align: right;
        
 }
-label {         
-        display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
+label { 
+    margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+    line-height: 70px;
+    display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
 }
 .listbox li a {
     text-decoration: none;
@@ -113,7 +115,7 @@ img {
     .listbox li {
         float: left;
         list-style: none;
-        padding-right: 70px;
+        padding: 15px;
     }
 .line-1 {
     background: white;
@@ -185,8 +187,7 @@ img {
    background-color: grey;
     background-image: url('../image/hero.png');
     background-repeat: no-repeat;
-    background-position: center ;
-    line-height: 3em;
+    background-position: center center ;
     background-size: cover;
 }
 .content p {
@@ -194,6 +195,7 @@ img {
 }
 .chain {
     color: black;
+    line-height: 2em;
     font-size: 30px;
     font-family: 'Arial Narrow Bold', sans-serif;
 }
@@ -249,6 +251,8 @@ span {
 }
 }
 .sidebar {
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 5px;
     grid-area: sidebar;
     background-color: rgb(198, 191, 191);
@@ -285,6 +289,9 @@ footer ul li {
     text-align: center;
     grid-area: section;
     background: radial-gradient(circle, rgb(189, 193, 129), rgb(175, 158, 161), rgb(117, 139, 108), rgb(176, 213, 228), rgb(152, 150, 186));
+}
+section p {
+    font-size: 20px;
 }
 .hire{
     background: black;
@@ -348,10 +355,6 @@ footer ul li {
     text-decoration: none;
     color: wheat;
     line-height: 2rem;
-}
-.content {
-    line-height: 2rem;
-    text-align: left;
 }
 footer ul li {
     list-style: none;

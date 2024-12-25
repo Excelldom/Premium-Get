@@ -75,12 +75,10 @@ label {
 }
 .header .listbox li a{
     font-size: 20px;
-    color: rgb(240, 0, 0);
+    color: firebrick;
     text-decoration: none;
-    padding: 10px;
-    }
-    .listbox li {
-        padding-right: 70px;
+    padding: 10px ;
+
     }
     .listbox li a:hover {
         color: yellow;
@@ -89,7 +87,7 @@ label {
     .listbox li {
         float: left;
         list-style: none;
-        padding-right: 70px;
+        padding: 15px;
     }
 .section {
     text-align: center;

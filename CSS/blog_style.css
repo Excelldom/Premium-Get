@@ -34,9 +34,9 @@ html, .container {
 .nav {
         text-align: right;
     }
-label { 
-        margin: 0 40px 20px 0; /* This mean margin top = 0, right = 40px, down = 0 and left = 0*/
-        
+    label { 
+        margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        line-height: 70px;
         display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
     }
 
@@ -80,22 +80,21 @@ label {
     background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
 }
 .header .listbox li a{
-font-size: 20px;
-color: red;
-text-decoration: none;
-}
-.listbox li a:hover {
-    color: yellow;
-    border-radius: 50%;
-}
-.listbox li {
-    float: left;
-    list-style: none;
-    padding-left: 70px;
-}
-.listbox {
-    float: inline-end;
-}
+    font-size: 20px;
+    color: firebrick;
+    text-decoration: none;
+    padding: 10px ;
+
+    }
+    .listbox li a:hover {
+        color: yellow;
+        border-radius: 50%;
+    }
+    .listbox li {
+        float: left;
+        list-style: none;
+        padding: 15px;
+    }
 .main {
     grid-area: main;
     background: linear-gradient(45deg, rgb(118, 74, 84),  rgb(91, 92, 62),  rgb(109, 81, 65),  rgb(92, 85, 51),  rgb(85, 64, 64));

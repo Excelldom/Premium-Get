@@ -35,7 +35,9 @@ html, .container {
 .nav {
         text-align: right;
     }
-label { 
+    label { 
+        margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        line-height: 70px;
         display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
     }
 .listbox li a {
@@ -82,7 +84,8 @@ label {
     font-size: 20px;
     color: firebrick;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px ;
+
     }
     .listbox li a:hover {
         color: yellow;
@@ -91,10 +94,7 @@ label {
     .listbox li {
         float: left;
         list-style: none;
-        padding-right: 70px;
-    }
-    .listbox {
-        float: inline-end;
+        padding: 15px;
     }
 
     .section {
