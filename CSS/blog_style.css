@@ -6,9 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
     grid-gap: 5px;
     grid-template-areas: 
-    'header header header'
-    'main main main'
-    'footer footer footer';
+    'header header'
+    'main main '
+    'footer footer';
 }
 html, .container {
     width: 100%;
@@ -16,12 +16,33 @@ html, .container {
     margin: 0;
 }
 .header {
-    margin: 0;
-    padding: 0;
+    grid-area: header;
     display: grid;
     grid-template-areas: 
-    'logo listbox listbox';
-   
+     'logo listbox listbox'
+    ;
+    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
+
+}
+label {
+    display: none; 
+}
+#toggle {
+    display: none;
+}
+.header .listbox li a{
+font-size: 20px;
+color: firebrick;
+text-decoration: none;
+
+}
+.listbox li a:hover {
+    color: yellow;
+}
+.listbox li {
+    padding-left: 90px;
+    float: left;
+    list-style: none;
 }
 .logo {
     grid-area: logo;
@@ -30,72 +51,39 @@ html, .container {
     grid-area: listbox;
     padding: 20px;
     float: right;
-        }
-.nav {
-        text-align: right;
-    }
-    label { 
-        margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
-        line-height: 70px;
-        display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
-    }
-
-.listbox li a {
-    text-decoration: none;
-    padding: 10px;
-}
-
-
-#toggle {
-    display: none;
-}
-/*@Media is a query that ensure a specific size of screen is shown which is below 500px. Anything below 500px will display on mobile view and those above 500px would not show. */
-@media (max-width: 760px) {
+}  
+@media (max-width: 850px) {
     label {
+        margin: 15px 5px 10px 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        float: inline-end;
         display: block;
         cursor: pointer;
         font-size: 26px;
     }
     .listbox {
+        border: 1px white solid;
+        height: 300px;
         display: none;
         position: absolute;
-        right: 5px;
-        width: 150px;
+        width: 200px;
         z-index: 2;
+        line-height: 5em;
+        opacity: 87%;
         background: black;
 
     }
     .listbox li a {
+        padding-left: 0;
+        padding-right: 70px;
         display: block;
-        border-bottom: 1px solid #0202db;
+        border-bottom: 1px grey solid;
        
     }
     #toggle:checked + .listbox {
         display: block;
     }
 }
-.header {
-    grid-area: header;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
-}
-.header .listbox li a{
-    font-size: 20px;
-    color: firebrick;
-    text-decoration: none;
-    padding: 10px ;
-
-    }
-    .listbox li a:hover {
-        color: yellow;
-        border-radius: 50%;
-    }
-    .listbox li {
-        float: left;
-        list-style: none;
-        padding: 15px;
-    }
-.main {
+ .main {
     grid-area: main;
     background: linear-gradient(45deg, rgb(118, 74, 84),  rgb(91, 92, 62),  rgb(109, 81, 65),  rgb(92, 85, 51),  rgb(85, 64, 64));
     color: antiquewhite;
@@ -130,7 +118,6 @@ html, .container {
     margin: auto;
 }
 .box-1{
-    margin-left: 100px;
     grid-area: box-1;
     display: grid;
 }
@@ -141,48 +128,74 @@ html, .container {
 .box-3{
     display: grid;
     grid-area: box-3;
-}
+}  
 .footer {
-    height: 360px;
-    grid-area:footer;
-    padding-left: 7px;
-    text-align: left;  
-    background: rgb(61, 56, 56);
-    color: wheat;
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: 
+     'list contact'
+    ;
+    background: rgb(73, 70, 70);
 }
 footer ul li {
     list-style: none;
     text-decoration: none;
-
-}
-img {
-    border: none;
 }
 #quick {
     text-align: left;
+    color: burlywood;
 }
 .line {
     background-color: yellow;
     width: 100px;
-    margin-left: 10px;
     height: 3px;
     border-radius: 5px;
+    margin-left: 9px;
     text-align: left;
 } 
-.listbox-2 li a {
+.footer li a {
     text-decoration: none;
     color: wheat;
     line-height: 2rem;
-}
-.content {
-    line-height: 2rem;
-    text-align: left;
 }
 footer ul li {
     list-style: none;
     text-decoration: none;
 
 }
-.listbox-2 li a:hover {
+.footer li a:hover {
     color: yellowgreen;
+}
+#contact {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 7px;
+    grid-area: contact;
+    color: wheat;
+}
+#contact b {
+    font-size: 27px;
+    color: yellow;
+}
+#contact a:hover {
+    color: yellowgreen;
+}
+#contact a {
+    color: wheat;
+}
+#contact img {
+    width: 20px;
+    height: 20px;
+}
+
+@media(max-width: 760px){
+
+    .footer {
+        grid-template-areas: 
+        'list'
+        'contact'
+        ;
+    }
+    #contact b {
+        font-size: 22px;
+    }
 }

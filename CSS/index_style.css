@@ -1,26 +1,54 @@
 .container {
-    
-    margin: 0px;
-    /* grid-template-columns: repeat(3px, 9fr); */
-    padding: 0px;
-    display: grid;
-    font-family: Arial, Helvetica, sans-serif;
-    grid-gap: 5px;
-    grid-template-areas: 
-    'header header header'
-    'content section section'
-    'main main main'
-    'sidebar sidebar sidebar'
-    ' box-5 box-4 box-4'
-    'footer footer footer';
-}
-.header {
     margin: 0;
     padding: 0;
     display: grid;
+    font-family: Arial, Helvetica, sans-serif;
     grid-template-areas: 
-    'logo listbox listbox';
-   
+    'header header '
+    'content section '
+    'sidebar sidebar '
+    'main main '
+    'box-1 box-1  '
+    'footer footer';
+    ;
+}
+.header,
+.section,
+.sidebar,
+.main,
+.box-1,
+.content,
+footer {
+    padding: 6px;
+    border: 1px black solid;
+}
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas: 
+     'logo listbox listbox'
+    ;
+    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
+}
+label {
+    display: none; 
+}
+#toggle {
+    display: none;
+}
+.header .listbox li a{
+font-size: 20px;
+color: firebrick;
+text-decoration: none;
+
+}
+.listbox li a:hover {
+    color: yellow;
+}
+.listbox li {
+    padding-left: 90px;
+    float: left;
+    list-style: none;
 }
 .logo {
     grid-area: logo;
@@ -29,111 +57,91 @@
     grid-area: listbox;
     padding: 20px;
     float: right;
-        }
-html, .container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-}
-.nav {
-        text-align: right;
-       
-}
-label { 
-    margin: 0 0 0 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
-    line-height: 70px;
-    display: none; /*Here we do not want the hamburger which is &#9776 to show on the desktop view*/
-}
-.listbox li a {
-    text-decoration: none;
-}
-
-
-#toggle {
-    display: none;
-}
-
-/*@Media is a query that ensure a specific size of screen is shown which is below 500px. Anything below 500px will display on mobile view and those above 500px would not show. */
-@media (max-width: 760px) {
+}  
+@media (max-width: 850px) {
     label {
+        margin: 15px 5px 10px 300px; /* This mean margin top = 0, right = 0, down = 0 and left = 300px*/
+        float: inline-end;
         display: block;
         cursor: pointer;
         font-size: 26px;
     }
     .listbox {
+        border: 1px white solid;
+        height: 300px;
         display: none;
         position: absolute;
-        width: 150px;
+        width: 200px;
         z-index: 2;
+        line-height: 5em;
+        opacity: 87%;
         background: black;
 
     }
     .listbox li a {
+        padding-left: 0;
+        padding-right: 70px;
         display: block;
-        border-bottom: 1px solid #0202db;
+        border-bottom: 1px grey solid;
        
     }
     #toggle:checked + .listbox {
         display: block;
     }
+}    
+.content {
+    grid-area: content;
+    background-color: rgb(137, 134, 134);
+    background-image: url(../image/hero.png) ;
+    background-position: center center ;
+    background-size: cover;
 }
-@media (max-width:768px){
-    .container {
-        grid-template-areas: 
-         'header'
-         'content'
-         'section'
-         'main'
-         'sidebar'
-         'box-4'
-         'box-5'
-         'footer'
-        ;
-    }
-    .header {width: 100%;}
-    .footer {width: 100%;}
+.chain {
+    color: black;
+    line-height: 1.5em;
+    font-size: 30px;
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
-.header {
-    grid-area: header;
-    background: linear-gradient(50deg, rgb(71, 102, 102), rgb(73, 73, 113), gray, rgb(91, 68, 68), rgb(55, 74, 55));
-}
-img {
-    margin: 0;
-    
-}
-.header .listbox li a{
-    font-size: 20px;
-    color: firebrick;
-    text-decoration: none;
-    padding: 10px ;
-
-    }
-    .listbox li a:hover {
-        color: yellow;
-        border-radius: 50%;
-    }
-    .listbox li {
-        float: left;
-        list-style: none;
-        padding: 15px;
-    }
-.line-1 {
-    background: white;
-    width: 200px;
-    height: 10px;
-     margin: auto; 
-    border-radius: 10px;
-}
-.line-0 {
+.movement {
+    border-radius: 15px;
     background: black;
-    height: 1px;
-    /* width: 500px; */
+    color: rebeccapurple;
+    border: 4px brown solid;
+    width: 200px;
+    animation: move 2s infinite;
 }
-.lin {
-    background: yellow;
-    width: 60px;
-    height: 3px;
-    margin: auto;
+@keyframes move {
+20% {
+    color: blue;
+}
+40% {
+    color: green;
+}
+
+60% {
+    color: yellow;
+}
+80% {
+    color: red;
+}
+100% {
+    color: rebeccapurple;
+}
+}
+.sidebar {
+    grid-area: sidebar;
+    background: lightgrey;
+}
+.sidebar img {
+    padding-left: 50px;
+}
+.ims {
+    padding-bottom: 29px;
+}
+.section {
+    grid-area: section;
+    background-color: rgb(124, 151, 156);
+    text-align: center;
 }
 .main {
     grid-area: main;
@@ -182,140 +190,29 @@ img {
     display: grid;
     grid-area: text-3;
 }
-.content {
-    grid-area: content;
-   background-color: grey;
-    background-image: url('../image/hero.png');
-    background-repeat: no-repeat;
-    background-position: center center ;
-    background-size: cover;
+.box-1 {
+    grid-area: box-1;
 }
-.content p {
-    font-size: 30px;
-}
-.chain {
-    color: black;
-    line-height: 2em;
-    font-size: 30px;
-    font-family: 'Arial Narrow Bold', sans-serif;
-}
-#box-4 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 10px;
-    grid-area: box-4;
-    text-align: center;
-    background: rgb(104, 86, 62);
-}
-#box-4 b {
-    font-size: 50px;
-    color: gray;
-}
-#box-4 a:hover {
-    color: yellowgreen;
-}
-#box-4 a {
-    color: white;
-}
-#box-4 img {
-    width: 20px;
-    height: 20px;
-}
-span {
-    font-size: 37px;
-    color: burlywood;
-}
-.movement {
-    border-radius: 15px;
-    background: black;
-    color: rebeccapurple;
-    border: 4px brown solid;
-    width: 200px;
-    animation: move 2s infinite;
-}
-@keyframes move {
-20% {
-    color: blue;
-}
-40% {
-    color: green;
-}
-
-60% {
-    color: yellow;
-}
-80% {
-    color: red;
-}
-100% {
-    color: rebeccapurple;
-}
-}
-.sidebar {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 5px;
-    grid-area: sidebar;
-    background-color: rgb(198, 191, 191);
-   
-}
-.ims {
-    padding-bottom: 29px;
-}
-.sidebar img {
-    border: none;
-    padding-left: 90px;
-}
-.footer {
-    grid-area:footer;
-    text-align: left;  
-background: rgb(61, 56, 56);
-color: wheat;
-}
-img {
-    border: none;
-}
-.line {
-    background-color: yellow;
-    width: 100px;
-    height: 3px;
-    border-radius: 5px;
-    margin-left: 10px;
-} 
-footer ul li {
-    list-style: none;
-    text-decoration: none;
-}
-.section {
-    text-align: center;
-    grid-area: section;
-    background: radial-gradient(circle, rgb(189, 193, 129), rgb(175, 158, 161), rgb(117, 139, 108), rgb(176, 213, 228), rgb(152, 150, 186));
-}
-section p {
-    font-size: 20px;
-}
-.hire{
-    background: black;
-    color: white;
-    font-size: 25px;
-}
-.hire:hover{
-    background: grey;
-    color: yellowgreen;
-    font-size: 25px;
-}
-.box-5 {
-    grid-area: box-5;
+.box-1 {
+    grid-area: box-1;
     background: black;
     color: antiquewhite;
     text-align: center;
 }
-.box-5 #one {
+.box-1 #one {
     color: rgb(89, 182, 219);
 }
-.box-5 #two {
+.box-1 #two {
     color: yellow;
 }
-.box-5 #get {
+.line-1 {
+    background: white;
+    width: 500px;
+    height: 10px;
+     margin: auto; 
+    border-radius: 10px;
+}
+.box-1 #get {
     background: red;
     color: white;
     width: 200px;
@@ -340,8 +237,21 @@ section p {
     background: rgb(113, 1, 1);
     color: gainsboro;
 }
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: 
+     'list contact'
+    ;
+    background: rgb(73, 70, 70);
+}
+footer ul li {
+    list-style: none;
+    text-decoration: none;
+}
 #quick {
     text-align: left;
+    color: burlywood;
 }
 .line {
     background-color: yellow;
@@ -351,7 +261,7 @@ section p {
     margin-left: 9px;
     text-align: left;
 } 
-.listbox-2 li a {
+.footer li a {
     text-decoration: none;
     color: wheat;
     line-height: 2rem;
@@ -361,6 +271,83 @@ footer ul li {
     text-decoration: none;
 
 }
-.listbox-2 li a:hover {
+.footer li a:hover {
     color: yellowgreen;
+}
+#contact {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 7px;
+    grid-area: contact;
+    color: wheat;
+}
+#contact b {
+    font-size: 27px;
+    color: yellow;
+}
+#contact a:hover {
+    color: yellowgreen;
+}
+#contact a {
+    color: wheat;
+}
+#contact img {
+    width: 20px;
+    height: 20px;
+}
+
+/* mobile view */
+@media(max-width:860px){
+    .container {
+        grid-template-areas: 
+        'header'
+        'content  '
+         'section'
+        'sidebar '
+        'main'
+        'box-1'
+        'footer';
+        ;   
+    }
+    .header,
+.section,
+.sidebar,
+.main,
+.box-1,
+.content,
+footer {
+    padding: 7px;
+    border: 1px black solid;
+}
+    .header {
+        grid-template-areas: 
+         'logo listbox'
+        ;
+    
+    }
+    .line-1 {
+        background: white;
+        width: 360px;
+        height: 10px;
+         margin: auto; 
+        border-radius: 10px;
+    }
+    .main {
+        padding: 1px;
+    }
+    #box {
+        margin: 3px;
+    }
+    .main img {
+        width: 150px;
+    }
+    .footer {
+        grid-template-areas: 
+        'list'
+        'contact'
+        ;
+    }
+    #contact b {
+        font-size: 22px;
+    }
+ 
 }
